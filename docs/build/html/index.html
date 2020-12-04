@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating a ReadtheDocs Documentation &mdash; sphinx-tutorial  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home" alt="Documentation Home"> sphinx-tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Creating a ReadtheDocs Documentation</a><ul>
+<li><a class="reference internal" href="#background">Background</a></li>
+<li><a class="reference internal" href="#installing-conda-and-setting-up-bioconda-channels">Installing conda and Setting Up bioconda Channels</a></li>
+<li><a class="reference internal" href="#creating-a-conda-environment">Creating a conda environment</a></li>
+<li><a class="reference internal" href="#installing-sphinx-latex-and-git">Installing sphinx, LaTex, and git</a></li>
+<li><a class="reference internal" href="#cloning-the-github-repository-to-local-machine">Cloning the GitHub Repository to Local Machine</a></li>
+<li><a class="reference internal" href="#running-sphinx-quickstart">Running sphinx-quickstart</a></li>
+<li><a class="reference internal" href="#editing-the-index-rst-file">Editing the index.rst File</a></li>
+<li><a class="reference internal" href="#editing-the-conf-py-file">Editing the conf.py File</a></li>
+<li><a class="reference internal" href="#making-the-html-and-pdf-files">Making the HTML and PDF Files</a></li>
+<li><a class="reference internal" href="#pushing-the-project-to-github">Pushing the Project to GitHub</a></li>
+<li><a class="reference internal" href="#importing-the-project-into-readthedocs">Importing the Project into ReadtheDocs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">sphinx-tutorial</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Creating a ReadtheDocs Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-a-readthedocs-documentation">
+<h1>Creating a ReadtheDocs Documentation</h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="background">
+<h2>Background</h2>
+<p>This tutorial describes a step-by-step tutorial to create a ReadtheDocs webpage and PDF file of an already created GitHub repository, using <a class="reference external" href="https://www.sphinx-doc.org/en/master/">sphinx</a>, <a class="reference external" href="https://www.latex-project.org/">LaTex</a>, <a class="reference external" href="https://docs.conda.io/en/latest/">conda</a>, and <a class="reference external" href="https://git-scm.com/">git</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is run using Ubuntu 18.04 Bionic Beaver. For different Ubuntu distributions, download and install the appropriate software/packages.</p>
+<p>Code ran on Linux terminal is preceded by <code class="docutils literal notranslate"><span class="pre">$</span></code>.</p>
+</div>
+</div>
+<div class="section" id="installing-conda-and-setting-up-bioconda-channels">
+<h2>Installing conda and Setting Up bioconda Channels</h2>
+<p>It is recommended to install miniconda3 and create a conda environment to install all necessary packages and dependencies without affecting the system. Miniconda is a free minimal installer for conda. It is a small, bootstrap version of Anaconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages, including pip, zlib and a few others. Use the conda install command to install 720+ additional conda packages from the Anaconda repository.</p>
+<p>Open a new terminal <strong>(Ctrl + Alt + T)</strong> and make sure that the system is up-to-date,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get update
+</pre></div>
+</div>
+<p>Download the latest package from the ‘<a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda Webpage</a> and install it with,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+$ sh Miniconda3-latest-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>It may be possible that Python 2.7 was installed with miniconda3. In order to use a newer version of Python, install the preferred Python version and update conda to resolve any dependency failures,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda install -c anaconda python=3.7
+</pre></div>
+</div>
+<p>Setup the appropriate bioconda channels. Make sure to run the following commands exactly in this order,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda config --add channels defaults
+$ conda config --add channels bioconda
+$ conda config --add channels conda-forge
+</pre></div>
+</div>
+<p>Bioconda is now enabled, so you can install any packages and versions available on the bioconda channel.</p>
+</div>
+<div class="section" id="creating-a-conda-environment">
+<h2>Creating a conda environment</h2>
+<p>Create a new conda environment with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda create --name &lt;environment-name&gt;
+</pre></div>
+</div>
+<p>Substitute <code class="docutils literal notranslate"><span class="pre">&lt;environment-name&gt;</span></code> with the preferred name you want. As an example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda create --name sphinx-tutorial
+</pre></div>
+</div>
+<p>Once the newly created environment has been installed, activate it to make the neccesary installations. Activate the conda environment with,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda activate sphinx-tutorial
+</pre></div>
+</div>
+<p>If more than one conda environment exists, the previously created conda environments can be listed in the terminal by running,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda env list
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-sphinx-latex-and-git">
+<h2>Installing sphinx, LaTex, and git</h2>
+<p>Install git, sphinx and LaTex using by conda with,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda install git
+$ conda install sphinx
+$ conda install sphinx_rtd_theme
+</pre></div>
+</div>
+<p>LaTex cannot be installed with conda, so the installation is done with,</p>
+<blockquote>
+<div><p>$ sudo apt-get install texlive-latex-extra</p>
+</div></blockquote>
+</div>
+<div class="section" id="cloning-the-github-repository-to-local-machine">
+<h2>Cloning the GitHub Repository to Local Machine</h2>
+<p>The sphinx and LaTex documentation will be created in the local machine. For this, the GitHub repository needs to be cloned to the local machine, edited locally, and then pushed back to GitHub. In order to clone the repository, navigate to the corresponding webpage in GitHub, click on <strong>Code</strong>, and copy the HTTPS link by highlighting the provided link or clicking the <strong>Clipboard</strong> sign, as shown bellow.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="_images/github_repo_clone.png"><img alt="_images/github_repo_clone.png" src="_images/github_repo_clone.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Link used to clone locally the repository. (click to expand)</span></p>
+</div>
+<p>Clone the repo in the Linux terminal into a location of choice. It is recommended to have a specific directory with GitHub repositories for being organized. Substitute <code class="docutils literal notranslate"><span class="pre">&lt;user-name&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;repo-name&gt;</span></code> with the correct user and repository names, accordingly, using,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/&lt;user-name&gt;/&lt;repo-name&gt;.git
+</pre></div>
+</div>
+<p>Navigate to your cloned repository in the local machine,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /path/to/GitHub/cloned/repo
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-sphinx-quickstart">
+<h2>Running sphinx-quickstart</h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory is needed to contain all the files sphinx will create. Create a <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory with,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir docs
+$ cd docs/
+</pre></div>
+</div>
+<p>Run sphinx to start building the documentation,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sphinx-quickstart
+</pre></div>
+</div>
+<p>Prompts will pop up, asking about the project information. Fill them out accordingly. Here is an example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Project</span> <span class="n">name</span><span class="p">:</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">tutorial</span>
+<span class="o">&gt;</span> <span class="n">Author</span> <span class="n">name</span><span class="p">(</span><span class="n">s</span><span class="p">):</span> <span class="n">Anibal</span> <span class="n">Morales</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">release</span> <span class="p">[]:</span> <span class="mf">1.0</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">language</span> <span class="p">[</span><span class="n">en</span><span class="p">]:</span>  <span class="o">**</span><span class="p">(</span><span class="n">press</span> <span class="n">Enter</span><span class="o">/</span><span class="n">Return</span><span class="p">;</span> <span class="n">default</span> <span class="n">to</span> <span class="n">English</span> <span class="s1">&#39;[en]&#39;</span><span class="p">)</span><span class="o">**</span>
+</pre></div>
+</div>
+<p>Once the project information has been collected, the following output should be seen</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Creating</span> <span class="n">file</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">anibal</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">rtd</span><span class="o">-</span><span class="n">tutorial</span><span class="o">/</span><span class="n">doctut</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="n">conf</span><span class="o">.</span><span class="n">py</span><span class="o">.</span>
+<span class="n">Creating</span> <span class="n">file</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">anibal</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">rtd</span><span class="o">-</span><span class="n">tutorialsphinx</span><span class="o">-</span><span class="n">quickstart</span><span class="o">/</span><span class="n">doctut</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">rst</span><span class="o">.</span>
+<span class="n">Creating</span> <span class="n">file</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">anibal</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">rtd</span><span class="o">-</span><span class="n">tutorial</span><span class="o">/</span><span class="n">doctut</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">Makefile</span><span class="o">.</span>
+<span class="n">Creating</span> <span class="n">file</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">anibal</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">rtd</span><span class="o">-</span><span class="n">tutorial</span><span class="o">/</span><span class="n">doctut</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">make</span><span class="o">.</span><span class="n">bat</span><span class="o">.</span>
+
+<span class="n">Finished</span><span class="p">:</span> <span class="n">An</span> <span class="n">initial</span> <span class="n">directory</span> <span class="n">structure</span> <span class="n">has</span> <span class="n">been</span> <span class="n">created</span><span class="o">.</span>
+
+<span class="n">You</span> <span class="n">should</span> <span class="n">now</span> <span class="n">populate</span> <span class="n">your</span> <span class="n">master</span> <span class="n">file</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">CondaEnv</span><span class="o">/</span><span class="n">repo</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">rst</span> <span class="ow">and</span> <span class="n">create</span> <span class="n">other</span> <span class="n">documentation</span> <span class="n">source</span> <span class="n">files</span><span class="o">.</span> <span class="n">Use</span> <span class="n">the</span> <span class="n">Makefile</span> <span class="n">to</span> <span class="n">build</span> <span class="n">the</span> <span class="n">docs</span><span class="p">,</span> <span class="n">like</span> <span class="n">so</span><span class="p">:</span>
+<span class="o">**</span><span class="n">make</span> <span class="n">builder</span><span class="o">**</span>
+<span class="n">where</span> <span class="s2">&quot;builder&quot;</span> <span class="ow">is</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">supported</span> <span class="n">builders</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">html</span><span class="p">,</span> <span class="n">latex</span> <span class="ow">or</span> <span class="n">linkcheck</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory, there should be the <code class="docutils literal notranslate"><span class="pre">build/</span></code> and <code class="docutils literal notranslate"><span class="pre">source/</span></code> directories, along the <code class="docutils literal notranslate"><span class="pre">make.bat</span></code> and <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> files,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
+build  make.bat  Makefile  source
+</pre></div>
+</div>
+<p>It is recommended to create inside the <code class="docutils literal notranslate"><span class="pre">docs/``directory</span>&#160; <span class="pre">an</span> <span class="pre">``images/</span></code> directoy to store all the image files that need to be included in the documentation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir images
+$ ls
+build  images  make.bat  Makefile  source
+</pre></div>
+</div>
+</div>
+<div class="section" id="editing-the-index-rst-file">
+<h2>Editing the index.rst File</h2>
+<p>sphinx uses <a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText (or reST)</a> as the default plaintext markup language. The <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> file will contain all of the project documentation in reST format. sphinx provides a <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">reST Primer</a> to help making the documentation. In order to begin typing the documentation, navigate to the <code class="docutils literal notranslate"><span class="pre">source/</span></code> directory and edit the <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> file as needed with whichever text editor of choice,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd source
+$ gedit index.rst
+</pre></div>
+</div>
+</div>
+<div class="section" id="editing-the-conf-py-file">
+<h2>Editing the conf.py File</h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file contains the metadata about the project. It also contains the themes, styles, and guidelines that sphinx needs to make the HTML and PDF files. In order to edit the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file, navigate to the <code class="docutils literal notranslate"><span class="pre">source/</span></code> directory, which also contains the <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> file. After the <code class="docutils literal notranslate"><span class="pre">#--Project</span> <span class="pre">information--</span></code> section, add the following to the file,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -- General configuration ---------------------------------------------------</span>
+
+<span class="c1"># Add any Sphinx extension module names here, as strings. They can be</span>
+<span class="c1"># extensions coming with Sphinx (named &#39;sphinx.ext.*&#39;) or your custom</span>
+<span class="c1"># ones.</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;sphinx.ext.doctest&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;sphinx.ext.intersphinx&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;sphinx.ext.todo&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;sphinx.ext.coverage&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;sphinx.ext.ifconfig&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;sphinx.ext.viewcode&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;sphinx.ext.githubpages&#39;</span>
+<span class="p">]</span>
+
+<span class="c1"># Add any paths that contain templates here, relative to this directory.</span>
+<span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
+<span class="n">source_suffix</span> <span class="o">=</span> <span class="s1">&#39;.rst&#39;</span>
+
+<span class="c1"># List of patterns, relative to source directory, that match files and</span>
+<span class="c1"># directories to ignore when looking for source files.</span>
+<span class="c1"># This pattern also affects html_static_path and html_extra_path.</span>
+<span class="n">exclude_patterns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_build&#39;</span><span class="p">,</span> <span class="s1">&#39;Thumbs.db&#39;</span><span class="p">,</span> <span class="s1">&#39;.DS_Store&#39;</span><span class="p">]</span>
+
+
+<span class="c1"># -- Options for HTML output -------------------------------------------------</span>
+
+<span class="kn">import</span> <span class="nn">sphinx_rtd_theme</span>
+
+<span class="c1"># The theme to use for HTML and HTML Help pages.  See the documentation for</span>
+<span class="c1"># a list of builtin themes.</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
+<span class="n">html_add_permalinks</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">master_doc</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span>
+
+<span class="c1"># Add any paths that contain custom static files (such as style sheets) here,</span>
+<span class="c1"># relative to this directory. They are copied after the builtin static files,</span>
+<span class="c1"># so a file named &quot;default.css&quot; will overwrite the builtin &quot;default.css&quot;.</span>
+<span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<span class="c1"># -- Options for LaTeX output ---------------------------------------------</span>
+
+<span class="n">latex_engine</span> <span class="o">=</span> <span class="s1">&#39;pdflatex&#39;</span>
+<span class="n">latex_theme</span> <span class="o">=</span> <span class="s1">&#39;howto&#39;</span>
+<span class="n">latex_toplevel_sectioning</span> <span class="o">=</span> <span class="s1">&#39;section&#39;</span>
+
+
+<span class="c1"># Configuration of Title Page</span>
+<span class="n">latex_maketitle</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">        \pagenumbering</span><span class="si">{Roman}</span><span class="s1"> </span><span class="si">%%</span><span class="s1">% to avoid page 1 conflict with actual page</span>
+<span class="s1">        \begin</span><span class="si">{titlepage}</span><span class="s1"></span>
+<span class="s1">            \vspace*</span><span class="si">{10mm}</span><span class="s1"> </span><span class="si">%%</span><span class="s1">% * is used to give space from top, Title</span>
+<span class="s1">            \flushright\textbf{\Huge {Creating a ReadtheDocs Documentation v1.0}}</span>
+<span class="s1">            \vspace</span><span class="si">{0mm}</span><span class="s1"> </span><span class="si">%%</span><span class="s1">% Sub-Title</span>
+<span class="s1">            \textbf{\Large {A Step-by-Step Guide}}</span>
+<span class="s1">            \vspace</span><span class="si">{50mm}</span><span class="s1"> % Author name</span>
+<span class="s1">            \textbf{\Large {Anibal E. Morales}}</span>
+<span class="s1">            \vspace</span><span class="si">{10mm}</span><span class="s1"> % Organization Name</span>
+<span class="s1">            \textbf{\Large {Plant Breeding and Genetics Laboratory}}</span>
+<span class="s1">            \vspace</span><span class="si">{0mm}</span><span class="s1"> % Division/Department</span>
+<span class="s1">            \textbf{\Large {FAO/IAEA Joint Division}}</span>
+<span class="s1">            \vspace</span><span class="si">{0mm}</span><span class="s1"> % City, Country</span>
+<span class="s1">            \textbf{\Large {Seibersdorf, Austria}}</span>
+<span class="s1">            \vspace</span><span class="si">{10mm}</span><span class="s1"> % Creation Date</span>
+<span class="s1">            \normalsize Created: October, 2020</span>
+<span class="s1">            \vspace*</span><span class="si">{0mm}</span><span class="s1"> </span><span class="si">% La</span><span class="s1">st updated Date</span>
+<span class="s1">            \normalsize  Last updated: 4 December 2020</span>
+<span class="s1">            </span><span class="si">%%</span><span class="s1"> \vfill adds at the bottom a note or caution</span>
+<span class="s1">            \vfill</span>
+<span class="s1">            \small\flushleft {{\textbf {Please note:}} \textit {This is an important note at the bottom of the title page.}}</span>
+<span class="s1">        \end</span><span class="si">{titlepage}</span><span class="s1"></span>
+<span class="s1">        \pagenumbering</span><span class="si">{arabic}</span><span class="s1"></span>
+<span class="s1">        \newcommand{\sectionbreak}{\clearpage}</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">latex_elements</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s1">&#39;releasename&#39;</span><span class="p">:</span> <span class="s1">&#39;Version 1.2&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;maketitle&#39;</span><span class="p">:</span> <span class="n">latex_maketitle</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Under the <code class="docutils literal notranslate"><span class="pre">#--Options</span> <span class="pre">for</span> <span class="pre">LaTex</span> <span class="pre">output--</span></code>, edit the <code class="docutils literal notranslate"><span class="pre">\begin{titlepage}</span></code> section. Comments with <code class="docutils literal notranslate"><span class="pre">%</span></code> are added, specifying the information that should be typed.</p>
+</div>
+<div class="section" id="making-the-html-and-pdf-files">
+<h2>Making the HTML and PDF Files</h2>
+<p>Once the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> and <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> files have been edited, it is time to make the HTML and PDF files. First, navigate to the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory where the <code class="docutils literal notranslate"><span class="pre">build</span></code>, <code class="docutils literal notranslate"><span class="pre">source</span></code>, <code class="docutils literal notranslate"><span class="pre">make.bat</span></code>, and <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> are.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ..
+</pre></div>
+</div>
+<p>Make the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and <code class="docutils literal notranslate"><span class="pre">project-name.pdf</span></code> files with the following commands,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make html
+$ make latexpdf
+</pre></div>
+</div>
+<p>If no errors pop up, the files have been built. Otherwise, fix the errors according to the error messages. and re-run the commands to make the files needed. The <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file can be found inside the directory <code class="docutils literal notranslate"><span class="pre">/docs/build/html/</span></code>, while the <code class="docutils literal notranslate"><span class="pre">project-name.pdf</span></code> file will be found inside the directory <code class="docutils literal notranslate"><span class="pre">/docs/build/latex/</span></code>. Both files can be reviewed by opening them and checking the outputs created, using the <code class="docutils literal notranslate"><span class="pre">xdg-open</span></code> commands,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ xdg-open build/html/index.html
+$ xdg-open build/latex/project-name.pdf
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">project-name.pdf</span></code> will have the given name of the project been built. Here <code class="docutils literal notranslate"><span class="pre">project-name</span></code> represents a general name to specify where the file will be located after running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">latexpdf</span></code>.</p>
+</div>
+<p>Edit and make the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and <code class="docutils literal notranslate"><span class="pre">project-name.pdf</span></code> files as many times as needed until the wanted results are found.</p>
+</div>
+<div class="section" id="pushing-the-project-to-github">
+<h2>Pushing the Project to GitHub</h2>
+<p>Once all the edits and the wanted documentation styles are done, push the changes to the GitHub repository,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add .
+$ git commit &lt;message describing the changes done&gt;
+$ git push
+</pre></div>
+</div>
+<p>Now that the edits are uploaded in the GitHub repository, it will be time to connect the GitHub repository to the ReadtheDocs website.</p>
+</div>
+<div class="section" id="importing-the-project-into-readthedocs">
+<h2>Importing the Project into ReadtheDocs</h2>
+<p>Navigate to the <a class="reference external" href="https://readthedocs.org/accounts/login/">ReadtheDocs Website</a> and sign in with the option <strong>Sign in with GitHub</strong>.</p>
+<div class="align-center figure" id="id2">
+<a class="reference internal image-reference" href="_images/readthedocs_signin.png"><img alt="_images/readthedocs_signin.png" src="_images/readthedocs_signin.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">ReadtheDocs login with GitHub option. (click to expand)</span></p>
+</div>
+<p>Click on <strong>Import a Project</strong>.</p>
+<div class="align-center figure" id="id3">
+<a class="reference internal image-reference" href="_images/readthedocs_signin.png"><img alt="_images/readthedocs_signin.png" src="_images/readthedocs_signin.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Import a project button. (click to expand)</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Anibal Morales
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
