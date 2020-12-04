@@ -94,6 +94,8 @@ Install git, sphinx and LaTex using by conda with,
  
 LaTex cannot be installed with conda, so the installation is done with,
 
+::
+
    $ sudo apt-get install texlive-latex-extra
 
 Cloning the GitHub Repository to Local Machine
