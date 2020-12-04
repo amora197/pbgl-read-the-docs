@@ -333,10 +333,33 @@ Navigate to the `ReadtheDocs Website <https://readthedocs.org/accounts/login/>`_
 
 Click on **Import a Project**.
 
-.. figure:: ../images/readthedocs_signin.png
+.. figure:: ../images/rtd-import-proj.png
    :width: 600px
    :align: center
    :figclass: align-center
 
    Import a project button. (click to expand)
 
+Choose the project with the arrow symbol next to the repository that will be imported.
+
+.. figure:: ../images/import-repo.png
+   :width: 600px
+   :align: center
+   :figclass: align-center
+
+   Choosing the project to import by clicking the arrow next to it. (click to expand)
+
+Click **Next**, followed by clicking the **Build version** button.
+
+.. figure:: ../images/rtd-build-version.png
+   :width: 600px
+   :align: center
+   :figclass: align-center
+
+   Button to build the imported project. (click to expand)
+
+Once the build has finished, click on the **View Docs** button where your ReadtheDocs webpage should be uploaded.
+
+If the webpage opened without any errors, then CONGRATULATIONS! Otherwise, do resolve those issues to have a documentation webpage up and running. Any additional edits that are done on the Github repository will be reflected on this created ReadtheDocs webpage.
+
+Hopefully, this tutorial is useful and helpful to create right-away a documentation webpage for people to use. 
