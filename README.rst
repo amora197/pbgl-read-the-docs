@@ -101,7 +101,7 @@ Cloning the GitHub Repository to Local Machine
 
 The sphinx and LaTex documentation will be created in the local machine. For this, the GitHub repository needs to be cloned to the local machine, edited locally, and then pushed back to GitHub. In order to clone the repository, navigate to the corresponding webpage in GitHub, click on **Code**, and copy the HTTPS link by highlighting the provided link or clicking the **Clipboard** sign, as shown bellow.
 
-.. figure:: ../images/github_repo_clone.png
+.. figure:: docs/images/github_repo_clone.png
    :width: 600px
    :align: center
    :figclass: align-center
@@ -324,7 +324,7 @@ Importing the Project into ReadtheDocs
 
 Navigate to the `ReadtheDocs Website <https://readthedocs.org/accounts/login/>`_ and sign in with the option **Sign in with GitHub**.
 
-.. figure:: ../images/readthedocs_signin.png
+.. figure:: docs/images/readthedocs_signin.png
    :width: 600px
    :align: center
    :figclass: align-center
@@ -333,7 +333,7 @@ Navigate to the `ReadtheDocs Website <https://readthedocs.org/accounts/login/>`_
 
 Click on **Import a Project**.
 
-.. figure:: ../images/rtd-import-proj.png
+.. figure:: docs/images/rtd-import-proj.png
    :width: 600px
    :align: center
    :figclass: align-center
@@ -342,7 +342,7 @@ Click on **Import a Project**.
 
 Choose the project with the arrow symbol next to the repository that will be imported.
 
-.. figure:: ../images/import-repo.png
+.. figure:: docs/images/import-repo.png
    :width: 600px
    :align: center
    :figclass: align-center
@@ -351,7 +351,7 @@ Choose the project with the arrow symbol next to the repository that will be imp
 
 Click **Next**, followed by clicking the **Build version** button.
 
-.. figure:: ../images/rtd-build-version.png
+.. figure:: docs/images/rtd-build-version.png
    :width: 600px
    :align: center
    :figclass: align-center
