@@ -9,7 +9,7 @@ Creating a ReadtheDocs Documentation
 Background
 ^^^^^^^^^^
 
-This tutorial describes a step-by-step tutorial to create a ReadtheDocs webpage and PDF file of an already created GitHub repository, using `sphinx <https://www.sphinx-doc.org/en/master/>`_, `LaTex <https://www.latex-project.org/>`_, `conda <https://docs.conda.io/en/latest/>`_, and `git <https://git-scm.com/>`_.
+This tutorial describes a step-by-step tutorial to create a ReadtheDocs webpage and PDF file of an already created GitHub repository, using `sphinx <https://www.sphinx-doc.org/en/master/>`_, `LaTex <https://www.latex-project.org/>`_, `conda <https://docs.conda.io/en/latest/>`_, and `git <https://git-scm.com/>`_. The online stap-by-step documentation can also be found `online in the ReadtheDocs webpage <https://sphinx-tutorial-anibal.readthedocs.io/en/latest/>`_.
 
 .. note::
    
@@ -91,6 +91,7 @@ Install git, sphinx and LaTex using by conda with,
  
 LaTex cannot be installed with conda, so the installation is done with,
 
+::
    $ sudo apt-get install texlive-latex-extra
 
 Cloning the GitHub Repository to Local Machine
