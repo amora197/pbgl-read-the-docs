@@ -6,9 +6,6 @@
 Creating a ReadtheDocs Documentation
 ====================================
 
-.. toctree::
-   :maxdepth: 2
-
 Background
 ^^^^^^^^^^
 
