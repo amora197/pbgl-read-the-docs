@@ -9,7 +9,7 @@ Creating a ReadtheDocs Documentation
 Background
 ^^^^^^^^^^
 
-This tutorial describes a step-by-step tutorial to create a ReadtheDocs webpage and PDF file of an already created GitHub repository, using `sphinx <https://www.sphinx-doc.org/en/master/>`_, `LaTex <https://www.latex-project.org/>`_, `conda <https://docs.conda.io/en/latest/>`_, and `git <https://git-scm.com/>`_. The online stap-by-step documentation can also be found `online in the ReadtheDocs webpage <https://sphinx-tutorial-anibal.readthedocs.io/en/latest/>`_.
+This tutorial describes a step-by-step tutorial to create a ReadtheDocs webpage and PDF file of an already created GitHub repository, using `sphinx <https://www.sphinx-doc.org/en/master/>`_, `LaTex <https://www.latex-project.org/>`_, `conda <https://docs.conda.io/en/latest/>`_, and `git <https://git-scm.com/>`_. The online step-by-step documentation can also be found `online in the ReadtheDocs webpage <https://sphinx-tutorial-anibal.readthedocs.io/en/latest/>`_ or by copy/pasting the following link: https://sphinx-tutorial-anibal.readthedocs.io/en/latest/.
 
 .. note::
    
@@ -193,6 +193,9 @@ The ``conf.py`` file contains the metadata about the project. It also contains t
 
    # -- General configuration ---------------------------------------------------
 
+   # install the needed theme with:
+   import sphinx_rtd_theme
+
    # Add any Sphinx extension module names here, as strings. They can be
    # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
    # ones.
@@ -219,18 +222,18 @@ The ``conf.py`` file contains the metadata about the project. It also contains t
 
    # -- Options for HTML output -------------------------------------------------
 
-   import sphinx_rtd_theme
-
    # The theme to use for HTML and HTML Help pages.  See the documentation for
    # a list of builtin themes.
-   html_theme = 'sphinx_rtd_theme'
-   html_add_permalinks = ''
+   pygments_style = 'sphinx'
    master_doc = 'index'
 
-   # Add any paths that contain custom static files (such as style sheets) here,
-   # relative to this directory. They are copied after the builtin static files,
-   # so a file named "default.css" will overwrite the builtin "default.css".
-   html_static_path = []
+   html_theme = "sphinx_rtd_theme"
+   html_add_permalinks = ""
+
+   html_theme_options = {
+       'sticky_navigation': True,
+       'collapse_navigation': False,
+   }
 
 
    # -- Options for LaTeX output ---------------------------------------------
