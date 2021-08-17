@@ -14,37 +14,55 @@ Background
 
 This tutorial describes a step-by-step tutorial to create a ReadtheDocs webpage and PDF file of an already created GitHub repository, using `sphinx <https://www.sphinx-doc.org/en/master/>`_, `LaTex <https://www.latex-project.org/>`_, `conda <https://docs.conda.io/en/latest/>`_, and `git <https://git-scm.com/>`_.
 
+This is run using Ubuntu 18.04 Bionic Beaver. For different Ubuntu distributions, download and install the appropriate software/packages.
+   
+Code ran on Linux terminal is preceded by ``$``.
+
 .. note::
    
-   This is run using Ubuntu 18.04 Bionic Beaver. For different Ubuntu distributions, download and install the appropriate software/packages.
-
-   Code ran on Linux terminal is preceded by ``$``.
+   This is not an official IAEA publication but is made available as working material. The material has not undergone an official review by the IAEA. The views expressed do not necessarily reflect those of the International Atomic Energy Agency or its Member States and remain the responsibility of the contributors. The use of particular designations of countries or territories does not imply any judgement by the publisher, the IAEA, as to the legal status of such countries or territories, of their authorities and institutions or of the delimitation of their boundaries. The mention of names of specific companies or products (whether or not indicated as registered) does not imply any intention to infringe proprietary rights, nor should it be construed as an endorsement or recommendation on the part of the IAEA.
 
 Installing conda and Setting Up bioconda Channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is recommended to install miniconda3 and create a conda environment to install all necessary packages and dependencies without affecting the system. Miniconda is a free minimal installer for conda. It is a small, bootstrap version of Anaconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages, including pip, zlib and a few others. Use the conda install command to install 720+ additional conda packages from the Anaconda repository.
+It is recommended to install miniconda3 and mamba for creating virtual environments and installing all necessary packages and dependencies without affecting the system. Miniconda is a free minimal installer for conda. It is a small, bootstrap version of Anaconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages, including pip, zlib and a few others. Use the conda install command to install 720+ additional conda packages from the Anaconda repository.
 
-Open a new terminal **(Ctrl + Alt + T)** and make sure that the system is up-to-date,
-
-:: 
-
-   $ sudo apt-get update
-
-Download the latest package from the '`Miniconda Webpage <https://docs.conda.io/en/latest/miniconda.html>`_ and install it with,
+Verify your system.
 
 ::
 
-   $ curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-   $ sh Miniconda3-latest-Linux-x86_64.sh
+   $ uname -m
 
-It may be possible that Python 2.7 was installed with miniconda3. In order to use a newer version of Python, install the preferred Python version and update conda to resolve any dependency failures,
+Miniconda3 (conda) and Mamba
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Download the Miniconda3, or simply "conda", installer:
+ 
+ - `Miniconda3 installer for Linux <https://docs.conda.io/en/latest/miniconda.html#linux-installers>`_
+
+Run the downloaded installer (for a 64-bit system):
 
 ::
 
-   $ conda install -c anaconda python=3.7
+   $ bash Miniconda3-latest-Linux-x86_64.sh
+   
+Open a new terminal window for conda to take effect. The word `(base)` should appear in front of the computer name in the terminal window.
 
-Setup the appropriate bioconda channels. Make sure to run the following commands exactly in this order,
+Verify the installation and update conda in new terminal window with:
+
+::
+
+   $ conda env list
+   $ conda update --all
+   $ conda upgrade --all
+   
+Install mamba library/package manager that will be used for installing software dependencies of the tool:
+
+::
+
+   $ conda install mamba --yes
+   
+Setup the appropriate channels for searching software packages. Make sure to run the following commands exactly in this order,
 
 ::
 
@@ -52,7 +70,13 @@ Setup the appropriate bioconda channels. Make sure to run the following commands
    $ conda config --add channels bioconda
    $ conda config --add channels conda-forge
 
-Bioconda is now enabled, so you can install any packages and versions available on the bioconda channel.
+The bioconda channel is now enabled, so you can install any packages and versions available on the bioconda channel.
+   
+It may be possible that Python 2.7 was installed with miniconda3. In order to use a newer version of Python, install the preferred Python version and update conda to resolve any dependency failures,
+
+::
+
+   $ mamba install python=3.7
 
 Creating a conda environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -88,20 +112,14 @@ Install git, sphinx and LaTex using by conda with,
 
 ::
 
-   $ conda install git
-   $ conda install sphinx
-   $ conda install sphinx_rtd_theme
- 
-LaTex cannot be installed with conda, so the installation is done with,
-
-::
-
-   $ sudo apt-get install texlive-latex-extra
+   $ mamba install git
+   $ mamba install sphinx
+   $ mamba install sphinx_rtd_theme
 
 Cloning the GitHub Repository to Local Machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The sphinx and LaTex documentation will be created in the local machine. For this, the GitHub repository needs to be cloned to the local machine, edited locally, and then pushed back to GitHub. In order to clone the repository, navigate to the corresponding webpage in GitHub, click on **Code**, and copy the HTTPS link by highlighting the provided link or clicking the **Clipboard** sign, as shown bellow.
+The sphinx and LaTex documentation will be created in the local machine. For this, whichever GitHub repository of interest needs to be cloned to the local machine, edited locally, and then pushed back to GitHub. In order to clone the repository, navigate to the corresponding webpage in GitHub, click on **Code**, and copy the HTTPS link by highlighting the provided link or clicking the **Clipboard** sign, as shown bellow.
 
 .. figure:: ../images/github_repo_clone.png
    :width: 600px
@@ -180,13 +198,14 @@ It is recommended to create inside the ``docs/``directory  an ``images/`` direct
 Editing the index.rst File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sphinx uses `reStructuredText (or reST) <https://docutils.sourceforge.io/rst.html>`_ as the default plaintext markup language. The ``index.rst`` file will contain all of the project documentation in reST format. sphinx provides a `reST Primer <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_ to help making the documentation. In order to begin typing the documentation, navigate to the ``source/`` directory and edit the ``index.rst`` file as needed with whichever text editor of choice,
+Sphinx uses `reStructuredText (or reST) <https://docutils.sourceforge.io/rst.html>`_ as the default plaintext markup language. The ``index.rst`` file will contain all of the project documentation in reST format. Sphinx provides a `reST Primer <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_ to help making the documentation. In order to begin typing the documentation, navigate to the ``source/`` directory and edit the ``index.rst`` file as needed with whichever text editor of choice,
 
 ::
 
    $ cd source
    $ gedit index.rst
 
+Any images used in the ``index.rst`` file should be stored in the ``images/`` directory created previously. 
 
 Editing the conf.py File
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -284,32 +303,31 @@ Under the ``#--Options for LaTex output--``, edit the ``\begin{titlepage}`` sect
 Making the HTML and PDF Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the ``conf.py`` and ``index.rst`` files have been edited, it is time to make the HTML and PDF files. First, navigate to the ``docs/`` directory where the ``build``, ``source``, ``make.bat``, and ``Makefile`` are. 
+Once the ``conf.py`` and ``index.rst`` files have been edited, it is time to make the HTML and PDF files. First, navigate to the ``docs/`` directory where ``build``, ``images``, ``source``, ``make.bat``, and ``Makefile`` are. 
 
 ::
 
    $ cd ..
 
-Make the ``index.html`` and ``project-name.pdf`` files with the following commands,
+Create the ``index.html`` and ``sphinx-tutorial.pdf`` files with the following commands,
 
 ::
 
    $ make html
    $ make latexpdf
 
-If no errors pop up, the files have been built. Otherwise, fix the errors according to the error messages. and re-run the commands to make the files needed. The ``index.html`` file can be found inside the directory ``/docs/build/html/``, while the ``project-name.pdf`` file will be found inside the directory ``/docs/build/latex/``. Both files can be reviewed by opening them and checking the outputs created, using the ``xdg-open`` commands,
+If no errors pop up, the files have been built. Otherwise, fix the errors according to the error messages and re-run the commands to make the files needed. The ``index.html`` file can be found inside the directory ``/docs/build/html/``, while the ``sphinx-tutorial.pdf`` file will be found inside the directory ``/docs/build/latex/``. Both files can be reviewed by opening them and checking the outputs created, using the ``xdg-open`` commands,
 
 ::
 
    $ xdg-open build/html/index.html 
-   $ xdg-open build/latex/project-name.pdf
+   $ xdg-open build/latex/sphinx-tutorial.pdf
 
 .. note::
    
-   ``project-name.pdf`` will have the given name of the project been built. Here ``project-name`` represents a general name to specify where the file will be located after running ``make latexpdf``.
+   ``sphinx-tutorial.pdf`` will have the given name of the project been built. Here ``sphinx-tutorial`` represents an example name to specify where the file will be located after running ``make latexpdf``.
 
-
-Edit and make the ``index.html`` and ``project-name.pdf`` files as many times as needed until the wanted results are found.
+Edit and make the ``index.html`` and ``sphinx-tutorial.pdf`` files as many times as needed until the wanted results are found.
 
 Pushing the Project to GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -366,5 +384,9 @@ Click **Next**, followed by clicking the **Build version** button.
 Once the build has finished, click on the **View Docs** button where your ReadtheDocs webpage should be uploaded.
 
 If the webpage opened without any errors, then CONGRATULATIONS! Otherwise, do resolve those issues to have a documentation webpage up and running. Any additional edits that are done on the Github repository will be reflected on this created ReadtheDocs webpage.
+
+.. attention::
+   
+   It may happen that building the project may be unsuccessful. Once any error is fixed, it is recommended to wait a few minutes before retrying to build the project; not waiting may cause the build to continue breaking. 
 
 Hopefully, this tutorial is useful and helpful to create right-away a documentation webpage for people to use. 

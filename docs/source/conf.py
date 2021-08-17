@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'sphinx-tutorial'
+project = 'pbgl-read-the-docs'
 copyright = '2020, Anibal Morales'
 author = 'Anibal Morales'
 

@@ -1,0 +1,13 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Background}{2}{section.1}
+\contentsline {section}{\numberline {2}Installing conda and Setting Up bioconda Channels}{3}{section.2}
+\contentsline {section}{\numberline {3}Miniconda3 (conda) and Mamba}{4}{section.3}
+\contentsline {section}{\numberline {4}Creating a conda environment}{5}{section.4}
+\contentsline {section}{\numberline {5}Installing sphinx, LaTex, and git}{6}{section.5}
+\contentsline {section}{\numberline {6}Cloning the GitHub Repository to Local Machine}{7}{section.6}
+\contentsline {section}{\numberline {7}Running sphinx\sphinxhyphen {}quickstart}{8}{section.7}
+\contentsline {section}{\numberline {8}Editing the index.rst File}{9}{section.8}
+\contentsline {section}{\numberline {9}Editing the conf.py File}{10}{section.9}
+\contentsline {section}{\numberline {10}Making the HTML and PDF Files}{12}{section.10}
+\contentsline {section}{\numberline {11}Pushing the Project to GitHub}{13}{section.11}
+\contentsline {section}{\numberline {12}Importing the Project into ReadtheDocs}{14}{section.12}

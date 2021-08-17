@@ -2,8 +2,8 @@ This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**sphinx-tutorial.tex
-(./sphinx-tutorial.tex
+**pbgl-read-the-docs.tex
+(./pbgl-read-the-docs.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (./sphinxhowto.cls
@@ -1039,12 +1039,12 @@ Package: hypcap 2016/05/16 v1.12 Adjusting the anchors of captions (HO)
 Package: sphinxmessages 2019/01/04 v2.0 Localized LaTeX macros (Sphinx team)
 )
 \@indexfile=\write4
-\openout4 = `sphinx-tutorial.idx'.
+\openout4 = `pbgl-read-the-docs.idx'.
 
 
-Writing index file sphinx-tutorial.idx
-(./sphinx-tutorial.aux)
-\openout1 = `sphinx-tutorial.aux'.
+Writing index file pbgl-read-the-docs.idx
+(./pbgl-read-the-docs.aux)
+\openout1 = `pbgl-read-the-docs.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
 LaTeX Font Info:    ... okay on input line 82.
@@ -1060,7 +1060,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
 LaTeX Font Info:    ... okay on input line 82.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 82.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 82.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 82.
@@ -1069,7 +1070,8 @@ LaTeX Font Info:    ... okay on input line 82.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 82.
 LaTeX Font Info:    ... okay on input line 82.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 82.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -1152,9 +1154,9 @@ LaTeX Info: Redefining \ref on input line 82.
 LaTeX Info: Redefining \pageref on input line 82.
 LaTeX Info: Redefining \nameref on input line 82.
 
-(./sphinx-tutorial.out) (./sphinx-tutorial.out)
+(./pbgl-read-the-docs.out) (./pbgl-read-the-docs.out)
 \@outlinefile=\write5
-\openout5 = `sphinx-tutorial.out'.
+\openout5 = `pbgl-read-the-docs.out'.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 89.
@@ -1175,116 +1177,124 @@ File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 112.
 
-(./sphinx-tutorial.toc)
+(./pbgl-read-the-docs.toc)
 \tf@toc=\write6
-\openout6 = `sphinx-tutorial.toc'.
+\openout6 = `pbgl-read-the-docs.toc'.
 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 118.
  [1
 
 ]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 125.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 127.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [2
 
 ]<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
-LaTeX Font Info:    Try loading font information for U+msa on input line 135.
+LaTeX Font Info:    Try loading font information for U+msa on input line 143.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 135.
+LaTeX Font Info:    Try loading font information for U+msb on input line 143.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3
 
-] [4
+]
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 153.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [4
 
 ] [5
 
+] [6
+
 ]
-<github_repo_clone.png, id=100, 1223.57124pt x 409.53pt>
+<github_repo_clone.png, id=110, 1223.57124pt x 409.53pt>
 File: github_repo_clone.png Graphic file (type png)
 <use github_repo_clone.png>
-Package pdftex.def Info: github_repo_clone.png  used on input line 215.
+Package pdftex.def Info: github_repo_clone.png  used on input line 257.
 (pdftex.def)             Requested size: 451.68457pt x 151.17378pt.
- [6
+ [7
 
  <./github_repo_clone.png>]
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 252.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 299.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <9> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 265.
- [7
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 313.
+ [8
 
-] [8
+] [9
 
 ]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 301.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 356.
 LaTeX Font Info:    Font shape `TS1/pcr/m/it' in size <9> not available
-(Font)              Font shape `TS1/pcr/m/sl' tried instead on input line 304.
- [9
+(Font)              Font shape `TS1/pcr/m/sl' tried instead on input line 362.
+ [10
 
-] [10] [11
+] [11] [12
 
-] [12
+] [13
 
 ]
-<readthedocs_signin.png, id=141, 467.7475pt x 813.0375pt>
+<readthedocs_signin.png, id=151, 467.7475pt x 813.0375pt>
 File: readthedocs_signin.png Graphic file (type png)
 <use readthedocs_signin.png>
-Package pdftex.def Info: readthedocs_signin.png  used on input line 436.
+Package pdftex.def Info: readthedocs_signin.png  used on input line 503.
 (pdftex.def)             Requested size: 374.19849pt x 650.4557pt.
 
 
-LaTeX Warning: Float too large for page by 24.16492pt on input line 437.
+LaTeX Warning: Float too large for page by 24.16492pt on input line 504.
 
-<rtd-import-proj.png, id=142, 579.16376pt x 404.51125pt>
+<rtd-import-proj.png, id=152, 579.16376pt x 404.51125pt>
 File: rtd-import-proj.png Graphic file (type png)
 <use rtd-import-proj.png>
-Package pdftex.def Info: rtd-import-proj.png  used on input line 445.
+Package pdftex.def Info: rtd-import-proj.png  used on input line 513.
 (pdftex.def)             Requested size: 451.68457pt x 315.47429pt.
-<import-repo.png, id=143, 548.0475pt x 471.7625pt>
+<import-repo.png, id=153, 548.0475pt x 471.7625pt>
 File: import-repo.png Graphic file (type png)
 <use import-repo.png>
-Package pdftex.def Info: import-repo.png  used on input line 454.
+Package pdftex.def Info: import-repo.png  used on input line 523.
 (pdftex.def)             Requested size: 451.68457pt x 388.82013pt.
-<rtd-build-version.png, id=144, 578.16pt x 557.08125pt>
+<rtd-build-version.png, id=154, 578.16pt x 557.08125pt>
 File: rtd-build-version.png Graphic file (type png)
 <use rtd-build-version.png>
-Package pdftex.def Info: rtd-build-version.png  used on input line 463.
+Package pdftex.def Info: rtd-build-version.png  used on input line 533.
 (pdftex.def)             Requested size: 451.68457pt x 435.21866pt.
-(./sphinx-tutorial.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 476.
- [13
+(./pbgl-read-the-docs.ind)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 554.
+ [14
 
-] [14 <./readthedocs_signin.png>] [15 <./rtd-import-proj.png>] [16 <./import-re
-po.png>] [17 <./rtd-build-version.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 476.
+] [15 <./readthedocs_signin.png>] [16 <./rtd-import-proj.png>] [17 <./import-re
+po.png>] [18 <./rtd-build-version.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 554.
 
-(./sphinx-tutorial.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 476.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 476.
-Package rerunfilecheck Info: File `sphinx-tutorial.out' has not changed.
-(rerunfilecheck)             Checksum: A5CC397F3A86EA160E6B05EDE60F366E;2279.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 476.
+(./pbgl-read-the-docs.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 554.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 554.
+Package rerunfilecheck Info: File `pbgl-read-the-docs.out' has not changed.
+(rerunfilecheck)             Checksum: 640145B7225F7906890A57F287D2AE72;2479.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 554.
  ) 
 Here is how much of TeX's memory you used:
- 13818 strings out of 492982
- 192219 string characters out of 6134896
- 398558 words of memory out of 5000000
- 17053 multiletter control sequences out of 15000+600000
- 40592 words of font info for 52 fonts, out of 8000000 for 9000
+ 13848 strings out of 492982
+ 192707 string characters out of 6134896
+ 395749 words of memory out of 5000000
+ 17075 multiletter control sequences out of 15000+600000
+ 43754 words of font info for 55 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 37i,11n,45p,726b,490s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,11n,45p,842b,490s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/f
@@ -1294,10 +1304,10 @@ ro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on sphinx-tutorial.pdf (18 pages, 819157 bytes).
+Output written on pbgl-read-the-docs.pdf (19 pages, 823267 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
- 168 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 227 PDF objects out of 1000 (max. 8388607)
+ 180 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 142 words of extra memory for PDF output out of 10000 (max. 10000000)
 
