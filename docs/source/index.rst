@@ -138,7 +138,7 @@ Navigate to your cloned repository in the local machine,
 
 ::
 
-   $ cd /path/to/GitHub/cloned/repo
+   $ cd /path/to/GitHub/cloned-repo
 
 Running sphinx-quickstart
 ^^^^^^^^^^^^^^^^^^^^^^^^^
