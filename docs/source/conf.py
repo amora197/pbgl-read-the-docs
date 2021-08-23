@@ -76,35 +76,37 @@ latex_engine = 'pdflatex'
 latex_theme = 'howto'
 latex_toplevel_sectioning = 'section'
 
-
 # Configuration of Title Page
 latex_maketitle = r'''
         \pagenumbering{Roman} %%% to avoid page 1 conflict with actual page
         \begin{titlepage}
-            \vspace*{10mm} %%% * is used to give space from top, Title
-            \flushright\textbf{\Huge {Creating a ReadtheDocs Documentation v1.0}}
-            \vspace{0mm} %%% Sub-Title
-            \textbf{\Large {A Step-by-Step Guide}}
-            \vspace{50mm} % Author name
-            \textbf{\Large {Anibal E. Morales}}
-            \vspace{10mm} % Organization Name
-            \textbf{\Large {Plant Breeding and Genetics Laboratory}}
-            \vspace{0mm} % Division/Department
-            \textbf{\Large {FAO/IAEA Joint Division}}
-            \vspace{0mm} % City, Country
-            \textbf{\Large {Seibersdorf, Austria}}
-            \vspace{10mm} % Creation Date
-            \normalsize Created: October, 2020
-            \vspace*{0mm} % Last updated Date
+            \vspace*{10mm} %%% * is used to give space from top
+            \flushright\textbf{\Huge {Creating a ReadtheDocs Documentation v1.0\\}}
+            \vspace{0mm} %%% * is used to give space from top
+            \textbf{\Large {A Step-by-Step Guide\\}}
+            \vspace{0mm} %%% * is used to give space from top
+            \textbf{\Large {[DRAFT]\\}}
+            \vspace{50mm}
+            \textbf{\Large {Anibal E. Morales-Zambrana\\}}
+            \vspace{10mm}
+            \textbf{\Large {Plant Breeding and Genetics Laboratory\\}}
+            \vspace{0mm}
+            \textbf{\Large {FAO/IAEA Joint Division\\}}
+            \vspace{0mm}
+            \textbf{\Large {Seibersdorf, Austria\\}}
+	    \vspace{10mm}
+            \normalsize Created: October, 2020\\
+            \vspace*{0mm}
             \normalsize  Last updated: 4 December 2020
-            %% \vfill adds at the bottom a note or caution
+            %% \vfill adds at the bottom
             \vfill
-            \small\flushleft {{\textbf {Please note:}} \textit {This is an important note at the bottom of the title page.}}
+            \small\flushleft {{\textbf {Please note:}} \textit {This is not an official IAEA publication but is made available as working material. The material has not undergone an official review by the IAEA. The views
+expressed do not necessarily reflect those of the International Atomic Energy Agency or its Member States and remain the responsibility of the contributors. The use of particular designations of countries or territories does not imply any judgement by the publisher, the IAEA, as to the legal status of such countries or territories, of their authorities and institutions or of the delimitation of their boundaries. The mention of names of specific companies or products (whether or not indicated as registered) does not imply any intention to infringe proprietary rights, nor should it be construed as an endorsement or recommendation on the part of the IAEA.}}
         \end{titlepage}
         \pagenumbering{arabic}
         \newcommand{\sectionbreak}{\clearpage}
 '''
 latex_elements = {
-   'releasename': 'Version 1.2',
+   'releasename': 'Version 1.0',
    'maketitle': latex_maketitle,
 }
